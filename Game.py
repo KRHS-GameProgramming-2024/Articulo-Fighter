@@ -24,7 +24,7 @@ while True:
                 player.goKey("left")
             elif event.key == pygame.K_d or event.key == pygame.K_RIGHT:
                 player.goKey("right")
-            elif event.key == pygame.K_w or event.key == pygame.K_UP:
+            elif event.key == pygame.K_w or event.key == pygame.K_UP or event.key == pygame.K_SPACE:
                 player.goKey("up")
             elif event.key == pygame.K_s or event.key == pygame.K_DOWN:
                 player.goKey("down")
@@ -33,7 +33,7 @@ while True:
                 player.goKey("sleft")
             elif event.key == pygame.K_d or event.key == pygame.K_RIGHT:
                 player.goKey("sright")
-            elif event.key == pygame.K_w or event.key == pygame.K_UP:
+            elif event.key == pygame.K_w or event.key == pygame.K_UP or event.key == pygame.K_SPACE:
                 player.goKey("sup")
             elif event.key == pygame.K_s or event.key == pygame.K_DOWN:
                 player.goKey("sdown")

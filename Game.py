@@ -13,7 +13,7 @@ fieldSize = [900, 525]
 screen = pygame.display.set_mode(size)
 
 counter = 0;
-player = Player(4, [900/2, 700/2])
+player = Player(4, 30, [900/2, 700/2])
 
 while True:
     for event in pygame.event.get():
@@ -39,8 +39,7 @@ while True:
                 player.goKey("sdown")
 
 
-    player.move()
-    player.worldCollide(fieldSize)
+    player.update(fieldSize)
     
     bgimage = pygame.image.load("Images/Stages/temp_background.png")
     bgrect = bgimage.get_rect()

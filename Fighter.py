@@ -10,7 +10,15 @@ class Fighter():
         self.rad = (self.rect.height/2 + self.rect.width/2)/2
         
         self.rect = self.rect.move(startPos)
+        
+        self.gravity = 1.25
+        self.jumping = False
 
+    def update(self, size):
+        self.speedy += self.gravity
+        self.move()
+        self.worldCollide(size)
+    
     def move(self):
         self.speed = [self.speedx, self.speedy]
         self.rect = self.rect.move(self.speed)
@@ -20,6 +28,7 @@ class Fighter():
         height = size[1]
         if self.rect.bottom > height:
             self.speedy = 0;
+            self.jumping = False
             self.rect.bottom = height
         if self.rect.right > width:
             self.speedx = 0;

@@ -2,17 +2,18 @@ import pygame, sys, math, random
 from Arm import *
 from leg import *
 from Player import *
-from PlayerCollide import *
+from Fighter import *
 
 pygame.init()
 
 clock = pygame.time.Clock();
 
 size = [900, 700]
+fieldSize = [900, 525]
 screen = pygame.display.set_mode(size)
 
 counter = 0;
-player = Player(4, [900/2, 700/2])
+player = Player(4, 30, [900/2, 700/2])
 
 while True:
     for event in pygame.event.get():
@@ -38,7 +39,7 @@ while True:
                 player.goKey("sdown")
 
 
-    player.move()
+    player.update(fieldSize)
     
     bgimage = pygame.image.load("Images/Stages/temp_background.png")
     bgrect = bgimage.get_rect()

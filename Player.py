@@ -1,5 +1,5 @@
 import pygame, sys, math
-from PlayerCollide import *
+from Fighter import *
 
 class Player(Fighter):
     def __init__(self, maxSpeed=4, startPos=[0,0]):
@@ -24,3 +24,4 @@ class Player(Fighter):
         elif direction == "sdown":
             self.speedy = 0
 
+    

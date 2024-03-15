@@ -2,17 +2,18 @@ import pygame, sys, math, random
 from Arm import *
 from leg import *
 from Player import *
-from PlayerCollide import *
+from Fighter import *
 
 pygame.init()
 
 clock = pygame.time.Clock();
 
 size = [900, 700]
+fieldSize = [900, 525]
 screen = pygame.display.set_mode(size)
 
 counter = 0;
-player = Player(4, [900/2, 700/2])
+player = Player(4, 30, [900/2, 700/2])
 
 while True:
     for event in pygame.event.get():
@@ -23,7 +24,7 @@ while True:
                 player.goKey("left")
             elif event.key == pygame.K_d or event.key == pygame.K_RIGHT:
                 player.goKey("right")
-            elif event.key == pygame.K_w or event.key == pygame.K_UP:
+            elif event.key == pygame.K_w or event.key == pygame.K_UP or event.key == pygame.K_SPACE:
                 player.goKey("up")
             elif event.key == pygame.K_s or event.key == pygame.K_DOWN:
                 player.goKey("down")
@@ -32,13 +33,13 @@ while True:
                 player.goKey("sleft")
             elif event.key == pygame.K_d or event.key == pygame.K_RIGHT:
                 player.goKey("sright")
-            elif event.key == pygame.K_w or event.key == pygame.K_UP:
+            elif event.key == pygame.K_w or event.key == pygame.K_UP or event.key == pygame.K_SPACE:
                 player.goKey("sup")
             elif event.key == pygame.K_s or event.key == pygame.K_DOWN:
                 player.goKey("sdown")
 
 
-    player.move()
+    player.update(fieldSize)
     
     bgimage = pygame.image.load("Images/Stages/temp_background.png")
     bgrect = bgimage.get_rect()

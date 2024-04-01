@@ -25,5 +25,8 @@ class Player(Fighter):
             self.speedy = 0
         elif direction == "sdown":
             self.speedy = 0
+            
+    
+        
 
     

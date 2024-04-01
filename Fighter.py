@@ -2,7 +2,9 @@ import pygame, sys, math
 
 class Fighter():
     def __init__(self, image, speed = [0,0], startPos = [0,0]):
-        self.image = pygame.image.load(image)
+        self.baseImage = pygame.image.load(image)
+        self.punch = pygame.image.load(TVPunching.png)
+        self.image = self.baseImage
         self.rect = self.image.get_rect()
         self.speedx = speed[0]
         self.speedy = speed[1]
@@ -44,3 +46,6 @@ class Fighter():
         y1 = self.rect.centery
         y2 = other.rect.centery
         return math.sqrt((x2-x1)**2 + (y2-y1)**2)
+        
+    def punch(self):
+        

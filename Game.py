@@ -28,6 +28,8 @@ while True:
                 player.goKey("up")
             elif event.key == pygame.K_s or event.key == pygame.K_DOWN:
                 player.goKey("down")
+            elif event.key == pygame.K_e:
+                player.punch()
         elif event.type == pygame.KEYUP:
             if event.key == pygame.K_a or event.key == pygame.K_LEFT:
                 player.goKey("sleft")

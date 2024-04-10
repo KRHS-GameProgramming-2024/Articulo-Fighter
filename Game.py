@@ -13,7 +13,7 @@ fieldSize = [900, 525]
 screen = pygame.display.set_mode(size)
 
 counter = 0;
-player = Player(4, 30, [900/2, 700/2])
+player = Player("TVBoi", 4, 30, [900/2, 700/2])
 
 while True:
     for event in pygame.event.get():

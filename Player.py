@@ -2,8 +2,8 @@ import pygame, sys, math
 from Fighter import *
 
 class Player(Fighter):
-    def __init__(self, maxSpeed=4, jumpHieght=15, startPos=[0,0]):
-        Fighter.__init__(self, "Images/Player/TVBoi/TV_boy.png", [0,0], startPos)
+    def __init__(self, name, maxSpeed=4, jumpHieght=15, startPos=[0,0]):
+        Fighter.__init__(self, name, [0,0], startPos)
         self.maxSpeed = maxSpeed
         self.jumpHieght = jumpHieght
         
@@ -25,5 +25,8 @@ class Player(Fighter):
             self.speedy = 0
         elif direction == "sdown":
             self.speedy = 0
+            
+    
+        
 
     

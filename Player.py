@@ -24,7 +24,7 @@ class Player(Fighter):
         elif direction == "sright":
             self.heading = "stoping right"
         elif direction == "sup":
-            self.speedy = 0
+            self.speedy += 0
         elif direction == "sdown":
             self.speedy = 0
             

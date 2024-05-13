@@ -15,6 +15,13 @@ screen = pygame.display.set_mode(size)
 mode = "screen"
 
 while True:
+    mimage = pygame.image.load("Images/loading screens/Menu.png")
+    mrect = mimage.get_rect()
+    mbimage = pygame.image.load("Images/loading screens/Menubuttons.png")
+    mbrect = mbimage.get_rect()
+    mb2image = pygame.image.load("Images/loading screens/Menubuttons - copy.png")
+    mb2rect = mb2image.get_rect()
+    
     while mode == "screen":
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -24,12 +31,7 @@ while True:
                 if event.key == pygame.K_SPACE:
                     mode = "game"
         
-        mimage = pygame.image.load("Images/loading screens/Menu.png")
-        mrect = mimage.get_rect()
-        mbimage = pygame.image.load("Images/loading screens/Menubuttons.png")
-        mbrect = mbimage.get_rect()
-        mb2image = pygame.image.load("Images/loading screens/Menubuttons - copy.png")
-        mb2rect = mb2image.get_rect()
+        
         
         screen.blit(mimage, mrect)
         screen.blit(mbimage, mbrect)
@@ -38,6 +40,10 @@ while True:
         pygame.display.flip()
         clock.tick(60)
         
+    player = Player("TVBoi", 4, 30, [900/2, 700/2])
+    bgimage = pygame.image.load("Images/Stages/temp_background.png")
+    bgrect = bgimage.get_rect()
+    
     while mode == "game":
         for event in pygame.event.get():
             if event.type==pygame.QUIT:
@@ -64,12 +70,10 @@ while True:
                     player.goKey("sdown")
 
         counter = 0;
-        player = Player("TVBoi", 4, 30, [900/2, 700/2])
+        
         
         player.update(fieldSize)
         
-        bgimage = pygame.image.load("Images/Stages/temp_background.png")
-        bgrect = bgimage.get_rect()
         
         screen.blit(bgimage, bgrect)
     

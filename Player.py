@@ -7,25 +7,46 @@ class Player(Fighter):
         self.maxSpeed = maxSpeed
         self.jumpHieght = jumpHieght
         
+        
     def goKey(self, direction):
         if direction == "left":
-            self.speedx = -self.maxSpeed
+            self.heading = "moving left"
+
         elif direction == "right":
-            self.speedx = self.maxSpeed
+            self.heading = "moving right"
         elif direction == "up" and not self.jumping:
             self.jumping = True
             self.speedy = -self.jumpHieght
         elif direction == "down":
             self.speedy = self.maxSpeed
         elif direction == "sleft":
-            self.speedx = 0
+            self.heading = "stoping left"
         elif direction == "sright":
-            self.speedx = 0
+            self.heading = "stoping right"
         elif direction == "sup":
-            self.speedy = 0
+            self.speedy += 0
         elif direction == "sdown":
             self.speedy = 0
             
+    def update(self, size):
+        Fighter.update(self, size)
+        
+        if self.heading == "moving left" and self.speedx > -self.maxSpeed:
+            self.speedx -= 1
+            
+        if self.heading == "moving right" and self.speedx < self.maxSpeed:
+            self.speedx += 1
+            
+            
+        if self.heading == "stoping left" and self.speedx < 0:
+            self.speedx += 1
+        elif self.heading == "stoping left":
+            self.heading = "standing"
+            
+        if self.heading == "stoping right" and self.speedx > 0:
+            self.speedx -= 1
+        elif self.heading == "stoping right":
+            self.heading = "standing"
     
         
 

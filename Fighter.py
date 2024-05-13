@@ -19,6 +19,7 @@ class Fighter():
         self.punching = False
         self.punchingTimer = 0
         self.punchingTimerMax = 12
+        self.heading = "standing" 
 
     def update(self, size):
         self.speedy += self.gravity
@@ -31,6 +32,8 @@ class Fighter():
                 self.image = self.baseImage
                 self.punching = False
                 self.punchingTimer = 0
+                
+        
     
     def move(self):
         self.speed = [self.speedx, self.speedy]

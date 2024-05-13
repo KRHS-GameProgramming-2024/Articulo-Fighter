@@ -1,3 +1,5 @@
 *.cpython-311.pyc
 /Player.cpython-311.pyc
 /leg.cpython-311.pyc
+/Fighter.cpython-311.pyc
+/Arm.cpython-311.pyc

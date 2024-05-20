@@ -3,7 +3,8 @@ import pygame, sys, math
 class Fighter():
     def __init__(self, name, speed = [0,0], startPos = [0,0]):
         self.baseImage = pygame.image.load("Images/Player/"+name+"/"+name+".png")
-        self.punchImages = pygame.image.load("Images/Player/"+name+"/"+name+"Punching.png")
+        self.punchImage = pygame.image.load("Images/Player/"+name+"/"+name+"Punching.png")
+        self.jumpImage = pygame.image.load("Images/Player/"+name+"/"+name+"Jumping.png")
         self.image = self.baseImage
         self.rect = self.image.get_rect()
         self.speedx = speed[0]
@@ -25,6 +26,11 @@ class Fighter():
         self.speedy += self.gravity
         self.move()
         self.worldCollide(size)
+        
+        if self.jumping:
+            if self.speedy >0: #falling
+                self.image = self.baseImage
+            
         
         if self.punching:
             self.punchingTimer += 1
@@ -62,6 +68,9 @@ class Fighter():
         return math.sqrt((x2-x1)**2 + (y2-y1)**2)
         
     def punch(self):
-        self.image = self.punchImages
+        self.image = self.punchImage
         self.punching = True
     
+    def jump(self):
+        self.image = self.jumpImage
+        self.jumping = True

@@ -4,6 +4,7 @@ from leg import *
 from Player import *
 from Fighter import *
 
+
 pygame.init()
 
 clock = pygame.time.Clock();
@@ -69,11 +70,12 @@ while True:
                 elif event.key == pygame.K_s or event.key == pygame.K_DOWN:
                     player.goKey("sdown")
 
+
         counter = 0;
         
         
         player.update(fieldSize)
-        
+
         
         screen.blit(bgimage, bgrect)
     

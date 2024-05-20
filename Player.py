@@ -15,7 +15,7 @@ class Player(Fighter):
         elif direction == "right":
             self.heading = "moving right"
         elif direction == "up" and not self.jumping:
-            self.jumping = True
+            self.jump()
             self.speedy = -self.jumpHieght
         elif direction == "down":
             self.speedy = self.maxSpeed

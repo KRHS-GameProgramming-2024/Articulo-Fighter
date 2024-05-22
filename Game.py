@@ -41,7 +41,8 @@ while True:
         pygame.display.flip()
         clock.tick(60)
         
-    player = Player("TVBoi", 4, 30, [900/2, 700/2])
+    player = Player("TVBoi", 4, 30, [900/4, 700/2])
+    player2 = Player("TVBoi", 4, 30, [900*3/4, 700/2])
     bgimage = pygame.image.load("Images/Stages/temp_background.png")
     bgrect = bgimage.get_rect()
     
@@ -80,5 +81,6 @@ while True:
         screen.blit(bgimage, bgrect)
     
         screen.blit(player.image, player.rect)
+        screen.blit(player2.image, player2.rect)
         pygame.display.flip()
         clock.tick(60)

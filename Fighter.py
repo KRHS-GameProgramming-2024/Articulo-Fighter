@@ -6,13 +6,13 @@ class Fighter():
         self.punchImage = pygame.image.load("Images/Player/"+name+"/"+name+"Punching.png")
         self.jumpImage = pygame.image.load("Images/Player/"+name+"/"+name+"Jumping.png")
         self.image = self.baseImage
-        self.rect = self.image.get_rect()
+        self.rect = self.image.get_rect(center = startPos)
         self.speedx = speed[0]
         self.speedy = speed[1]
         self.speed = [self.speedx, self.speedy]
         self.rad = (self.rect.height/2 + self.rect.width/2)/2
         
-        self.rect = self.rect.move(startPos)
+        #self.rect = self.rect.move(startPos)
         
         self.gravity = 1.25
         self.jumping = False

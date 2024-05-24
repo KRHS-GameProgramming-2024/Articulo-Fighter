@@ -42,7 +42,7 @@ while True:
         clock.tick(60)
         
     player = Player("TVBoi", 4, 30, [900/4, 700/2])
-    player2 = Player("TVBoi", 4, 30, [900*3/4, 700/2])
+    player2 = Player("Frank", 4, 30, [900*3/4, 700/2])
     bgimage = pygame.image.load("Images/Stages/temp_background.png")
     bgrect = bgimage.get_rect()
     
@@ -70,13 +70,33 @@ while True:
                     player.goKey("sup")
                 elif event.key == pygame.K_s or event.key == pygame.K_DOWN:
                     player.goKey("sdown")
-
+               
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_j:
+                    player2.goKey("left")
+                elif event.key == pygame.K_l:
+                    player2.goKey("right")
+                elif event.key == pygame.K_i:
+                    player2.goKey("up")
+                elif event.key == pygame.K_k:
+                    player2.goKey("down")
+                elif event.key == pygame.K_o:
+                    player2.punch()
+            elif event.type == pygame.KEYUP:
+                if event.key == pygame.K_j:
+                    player2.goKey("sleft")
+                elif event.key == pygame.K_l:
+                    player2.goKey("sright")
+                elif event.key == pygame.K_i:
+                    player2.goKey("sup")
+                elif event.key == pygame.K_k:
+                    player2.goKey("sdown")
 
         counter = 0;
         
         
         player.update(fieldSize)
-
+        player2.update(fieldSize)
         
         screen.blit(bgimage, bgrect)
     

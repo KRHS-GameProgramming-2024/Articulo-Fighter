@@ -61,17 +61,6 @@ while True:
                     player.goKey("down")
                 elif event.key == pygame.K_e:
                     player.punch()
-            elif event.type == pygame.KEYUP:
-                if event.key == pygame.K_a or event.key == pygame.K_LEFT:
-                    player.goKey("sleft")
-                elif event.key == pygame.K_d or event.key == pygame.K_RIGHT:
-                    player.goKey("sright")
-                elif event.key == pygame.K_w or event.key == pygame.K_UP or event.key == pygame.K_SPACE:
-                    player.goKey("sup")
-                elif event.key == pygame.K_s or event.key == pygame.K_DOWN:
-                    player.goKey("sdown")
-               
-            elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_j:
                     player2.goKey("left")
                 elif event.key == pygame.K_l:
@@ -91,6 +80,14 @@ while True:
                     player.goKey("sup")
                 elif event.key == pygame.K_s or event.key == pygame.K_DOWN:
                     player.goKey("sdown")
+                if event.key == pygame.K_a or event.key == pygame.K_LEFT:
+                    player.goKey("sleft")
+                elif event.key == pygame.K_d or event.key == pygame.K_RIGHT:
+                    player.goKey("sright")
+                elif event.key == pygame.K_w or event.key == pygame.K_UP or event.key == pygame.K_SPACE:
+                    player.goKey("sup")
+                elif event.key == pygame.K_s or event.key == pygame.K_DOWN:
+                    player.goKey("sdown")
                 if event.key == pygame.K_j:
                     player2.goKey("sleft")
                 elif event.key == pygame.K_l:
@@ -99,7 +96,7 @@ while True:
                     player2.goKey("sup")
                 elif event.key == pygame.K_k:
                     player2.goKey("sdown")
-                    
+
 
         counter = 0;
         

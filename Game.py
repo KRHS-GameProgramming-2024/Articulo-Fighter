@@ -69,7 +69,7 @@ while True:
                     player2.goKey("up")
                 elif event.key == pygame.K_k:
                     player2.goKey("down")
-                elif event.key == pygame.K_o:
+                elif event.key == pygame.K_o or event.key == pygame.K_u:
                     player2.punch()
             elif event.type == pygame.KEYUP:
                 if event.key == pygame.K_a or event.key == pygame.K_LEFT:

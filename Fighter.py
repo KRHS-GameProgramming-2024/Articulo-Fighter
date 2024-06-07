@@ -12,6 +12,8 @@ class Fighter():
         self.speed = [self.speedx, self.speedy]
         self.rad = (self.rect.height/2 + self.rect.width/2)/2
         
+        self.health = 100
+        
         #self.rect = self.rect.move(startPos)
         
         self.gravity = 1.25
@@ -39,7 +41,20 @@ class Fighter():
                 self.punching = False
                 self.punchingTimer = 0
                 
-        
+    def fighterCollide(self, other):
+        if self != other:
+            if self.rect.right > other.rect.left:
+                if self.rect.left < other.rect.right:
+                    if self.rect.bottom > other.rect.top:
+                        if self.rect.top < other.rect.bottom:
+                            if not self.punching and other.punching:
+                                self.health -= 25
+                            elif self.punching and other.punching:
+                                self.health -= 1
+                            if self.punching:
+                                self.punchingTimer = self.punchingTimerMax
+                            return True
+        return False    
     
     def move(self):
         self.speed = [self.speedx, self.speedy]
@@ -69,6 +84,7 @@ class Fighter():
         
     def punch(self):
         self.image = self.punchImage
+        self.punchTimer = 0;
         self.punching = True
     
     def jump(self):

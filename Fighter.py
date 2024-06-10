@@ -48,9 +48,9 @@ class Fighter():
                     if self.rect.bottom > other.rect.top:
                         if self.rect.top < other.rect.bottom:
                             if not self.punching and other.punching:
-                                self.health -= 25
+                                self.health -= 15
                             elif self.punching and other.punching:
-                                self.health -= 10
+                                self.health -= 1
                             if self.punching:
                                 self.punchingTimer = self.punchingTimerMax
                             return True

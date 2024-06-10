@@ -50,7 +50,7 @@ class Fighter():
                             if not self.punching and other.punching:
                                 self.health -= 25
                             elif self.punching and other.punching:
-                                self.health -= 1
+                                self.health -= 10
                             if self.punching:
                                 self.punchingTimer = self.punchingTimerMax
                             return True

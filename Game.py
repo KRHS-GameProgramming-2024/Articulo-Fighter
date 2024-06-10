@@ -101,6 +101,13 @@ while True:
         player.update(fieldSize)
         player2.update(fieldSize)
         
+        player.fighterCollide(player2)
+        player2.fighterCollide(player)
+        
+        print(player.health, player2.health)
+        if player.health <=0 or player2.health <=0:
+            mode = "screen"
+        
         screen.blit(bgimage, bgrect)
     
         screen.blit(player.image, player.rect)

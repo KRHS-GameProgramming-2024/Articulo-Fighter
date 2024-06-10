@@ -26,13 +26,10 @@ while True:
     while mode == "screen":
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                sys.exit();
-            elif event.type == pygame.KEYDOWN:
-                print(event.key)
-                if event.key == pygame.K_SPACE:
+                sys.exit()
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                if pygame.mouse.get_pressed(num_buttons=3):
                     mode = "game"
-        
-        
         
         screen.blit(mimage, mrect)
         screen.blit(mbimage, mbrect)
